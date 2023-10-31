@@ -1,11 +1,9 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
 """
-MOdule 0-rectangle
-Defines a class Rectangle
-
+Defines an empty class Rectangle
 """
 
 
 class Rectangle:
-    """Defines a Rectangle instance"""
+    """Empty representation of a rectangle"""
     pass
