@@ -1,13 +1,10 @@
 #!/usr/bin/node
-const { readFileSync, writeFile } = require('fs');
-const { argv } = require('process');
-
-const getContent = (file) => {
-  return readFileSync(file, 'utf8');
-};
-
-const concated = getContent(argv[2]) + '' + getContent(argv[3]);
-
-writeFile(argv[4], concated, 'utf8', err => {
-  if (err) throw err;
-});
+const fs = require('fs');
+let args = process.argv.slice(2);
+if (args.length < 3) {
+  console.log('Usage: ./102-concat.js fileA fileB fileC');
+  process.exit(1);
+}
+let fa = fs.readFileSync(args[0]);
+let fb = fs.readFileSync(args[1]);
+fs.writeFileSync(args[2], fa + fb);
